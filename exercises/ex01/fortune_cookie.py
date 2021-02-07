@@ -20,13 +20,13 @@ fortune: int = int(randint(1, 100))
 
 if fortune <= 50:
     if fortune <= 25:
-            print("Brighter days are ahead.")
+        print("Brighter days are ahead.")
     else:
-            print("You got this!")
+        print("You got this!")
 else:
     if fortune <= 75:
-            print("Good things are coming your way.")
+        print("Good things are coming your way.")
     else:
-            print("Soon your life will become richer.")
+        print("Soon your life will become richer.")
 
 print("Now, go spread positive vibes!")
