@@ -35,5 +35,5 @@ days_away: timedelta = timedelta(days_needed)
 date_reached = days_away + today
 date_reached.strftime("%B %d, %Y")
 
-print("We will reach " + str(trgt)+"% vaccination in " + str(days_needed)
- + " days, which falls on " + date_reached.strftime("%B %d, %Y"))
+print("We will reach " + str(trgt) + "% vaccination in " + str(days_needed)
+    + " days, which falls on " + date_reached.strftime("%B %d, %Y"))
