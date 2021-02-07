@@ -28,11 +28,12 @@ trgt_percent = trgt / 100
 
 trgt_doses = population * 2 * trgt_percent
 remaining_doses = trgt_doses - doses_admin
-dys_ndd = int(remaining_doses / doses_per_day)
+days_needed = round(remaining_doses / doses_per_day)
 
 today: datetime = datetime.today()
-days_away: timedelta = timedelta(dys_ndd)
-dte = days_away + today
-dte.strftime("%B %d, %Y")
+days_away: timedelta = timedelta(days_needed)
+date_reached = days_away + today
+date_reached.strftime("%B %d, %Y")
 
-print("We will reach "+str(trgt)+"% vaccination in "+str(dys_ndd)+" days, which falls on "+dte.strftime("%B %d, %Y"))
+print("We will reach " + str(trgt)+"% vaccination in " + str(days_needed)
+ + " days, which falls on " + date_reached.strftime("%B %d, %Y"))
