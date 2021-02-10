@@ -22,18 +22,17 @@ from datetime import timedelta
 population = int(input("Population: "))
 doses_admin = int(input("Doses administered: "))
 doses_per_day = int(input("Doses per day: "))
-trgt = int(input("Target percent vaccinated: "))
+target = int(input("Target percent vaccinated: "))
 
-trgt_percent = trgt / 100
+target_percent = target / 100
 
-trgt_doses = population * 2 * trgt_percent
-remaining_doses = trgt_doses - doses_admin
-days_needed = round(remaining_doses / doses_per_day)
+total_needed_vaccinated = target_percent * population
+remaining_vaccinations = total_needed_vaccinated - doses_admin
+days_needed = round(int(remaining_vaccinations / doses_per_day))
 
 today: datetime = datetime.today()
 days_away: timedelta = timedelta(days_needed)
-date_reached = days_away + today
-date_reached.strftime("%B %d, %Y")
+date_fully_vaccinated = days_away + today
+date_fully_vaccinated.strftime("%B %d, %Y")
 
-print("We will reach " + str(trgt) + "% vaccination in " + str(days_needed)
-    + " days, which falls on " + date_reached.strftime("%B %d, %Y"))
+print("We will reach " + str(target) + "% vaccination in " + str(days_needed) + " days, which falls on " + date_fully_vaccinated.strftime("%B %d, %Y"))
